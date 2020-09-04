@@ -79,8 +79,10 @@ public class SubmissionActivity extends AppCompatActivity {
                 submission.getProjectLink());
 
         call.enqueue(new Callback<Void>() {
+
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.i(TAG + "-responseCode-",  String.valueOf(response.code()));
                 if (response.isSuccessful()) {
                     Log.i(TAG + " - submission ", "successful");
                     showSuccessfulPopUp(v);
